@@ -1,5 +1,5 @@
 {
-    "name": "com.orkunmanap.runtime-transform-handles",
+    "name": "com.nishlumi.runtime-transform-handles",
     "version": "1.0.0",
     "displayName": "Runtime Transform Handles",
     "description": "Unity Runtime Transform Handles is a powerful tool that allows developers to transform objects at runtime using a set of intuitive and professional gizmos. Ideal for building modding tools, runtime editors, or games that require object manipulation, this plugin adds multiple object selection, changeable origin points, better auto scale, multiple handles, and other features to the base project. Easy to use and extend, Unity Runtime Transform Handles is an invaluable tool for any developer looking to add object manipulation capabilities to their project.",
@@ -9,11 +9,11 @@
         "Transform",
         "Handles"
     ],
-    "homepage": "https://github.com/manaporkun/UnityRuntimeTransformHandles",
+    "homepage": "https://github.com/nishlumi/UnityRuntimeTransformHandles",
     "author": {
-        "name": "Orkun Manap",
-        "email": "hello@manap.dev",
-        "url": "https://manap.dev"},
+        "name": "nishlumi",
+        "email": "lumidina@gmail.com",
+        "url": ""},
     "license": "MIT",
     "unity": "2019.4",
     "dependencies": {}
