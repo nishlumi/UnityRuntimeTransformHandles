@@ -64,7 +64,7 @@ namespace TransformHandles
             UpdateHandleTransformation();
             
             if (!autoScale || handleCamera == null) return;
-            transform.PreserveScaleOnScreen(handleCamera.fieldOfView, autoScaleSizeInPixels, handleCamera);
+            transform.PreserveScaleOnScreen(handleCamera.fieldOfView, autoScaleSizeInPixels * devicePixelRatio, handleCamera);
         }
         
         public virtual void Enable(Transform targetTransform)

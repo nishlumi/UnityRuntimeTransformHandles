@@ -26,6 +26,11 @@ namespace TransformHandles
         [SerializeField] private KeyCode spaceShortcut = KeyCode.X;
         [SerializeField] private KeyCode pivotShortcut = KeyCode.Z;
 
+        [Header("Other options")]
+        [SerializeField] public float autoScaleSizeInPixels = 192;
+        [SerializeField] public bool autoScale;
+        [SerializeField] public float devicePixelRatio = 1;
+        
         private RaycastHit[] _rayHits;
         
         private Vector3 _previousMousePosition;
@@ -85,7 +90,10 @@ namespace TransformHandles
             ghost.Initialize();
 
             var transformHandle = Instantiate(transformHandlePrefab).GetComponent<Handle>();
-            transformHandle.Enable(ghost.transform);            
+            transformHandle.Enable(ghost.transform);
+            transformHandle.autoScaleSizeInPixels = autoScaleSizeInPixels;
+            transformHandle.autoScale = autoScale;
+            transformHandle.devicePixelRatio = devicePixelRatio;
             
             var group = new TransformGroup(ghost, transformHandle);
             
@@ -108,7 +116,10 @@ namespace TransformHandles
             ghost.Initialize();
 
             var transformHandle = Instantiate(transformHandlePrefab).GetComponent<Handle>();
-            transformHandle.Enable(ghost.transform);      
+            transformHandle.Enable(ghost.transform);
+            transformHandle.autoScaleSizeInPixels = autoScaleSizeInPixels;
+            transformHandle.autoScale = autoScale;
+            transformHandle.devicePixelRatio = devicePixelRatio;
             
             var group = new TransformGroup(ghost, transformHandle);
             _handleGroupMap.Add(transformHandle, group);

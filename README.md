@@ -16,7 +16,7 @@ Unity Runtime Transform Handles is a powerful tool that allows developers to tra
 1. Open the Package Manager from `Window > Package Manager`
 2. `"+" button > Add package from git URL`
 3. Enter the following
-   * https://github.com/manaporkun/UnityRuntimeTransformHandles.git?path=/Packages/runtime-transform-handles
+   * https://github.com/nishlumi/UnityRuntimeTransformHandles.git?path=/Packages/runtime-transform-handles
 
 Or, open `Packages/manifest.json` and add the following to the dependencies block.
 
@@ -55,3 +55,14 @@ Handle component allows users to manipulate the position, rotation, and scale of
 It is used to group and transform multiple Unity Transform objects together. The TransformGroup contains a HashSet of Transform objects that are grouped together, as well as several dictionaries that map Transform objects to MeshRenderer components and Bounds objects. The class has methods to add and remove Transform objects to the group, as well as methods to update the group's position, rotation, and scale.
 
 
+
+### Different from Original
+
+* Handle.cs
+
+  - Added public property: "devicePixelRatio".
+  - Change change private to public property: "autoScaleSizeInPixels"
+
+* TransformHandleManager
+
+  - Added public property: "autoScaleSizeInPixels", "autoScale", "devicePixelRatio".
