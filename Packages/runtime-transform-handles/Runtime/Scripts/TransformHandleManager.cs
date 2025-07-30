@@ -50,10 +50,15 @@ namespace TransformHandles
         private bool _handleActive;
         private bool _isInitialized;
 
+        /// <summary>
+        /// wheather the handle is being held ?
+        /// </summary>
+        public bool IsGrabingHandle { get { return _interactedHandle != null; } }
+
         private void OnEnable()
         {
             SceneManager.activeSceneChanged += OnActiveSceneChanged;
-            
+
             InitializeManager();
         }
 
@@ -272,13 +277,15 @@ namespace TransformHandles
 
             foreach (var hit in _rayHits)
             {
-                var hitCollider = hit.collider;
-                if (hitCollider == null) continue;
+                if (hit.collider == null) continue;
+                
                 handle = hit.collider.gameObject.GetComponentInParent<HandleBase>();
 
-                if (handle == null) continue;
-                hitPoint = hit.point;
-                return;
+                if (handle != null)
+                {
+                    hitPoint = hit.point;
+                    return;
+                }
             }
         }
 
